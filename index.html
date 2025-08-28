@@ -11,22 +11,24 @@
 
       /* Background settings */
       background-image: url("background.jpg"); /* replace with your file name */
-      background-size: cover;      /* stretch/scale to cover screen */
-      background-position: center; /* center the image */
-      background-repeat: no-repeat; /* prevent tiling */
-      color: white; /* makes text visible on dark images */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: white;
       font-family: Arial, sans-serif;
 
-      display: flex;              /* enable flexbox */
-      justify-content: center;    /* center horizontally */
-      align-items: center;        /* center vertically */
-      text-align: center;         /* center multiline text */
+      display: flex;
+      flex-direction: column;   /* stack items vertically */
+      justify-content: center;  /* center vertically */
+      align-items: center;      /* center horizontally */
+      text-align: center;
     }
 
     .snktext {
-      font-size: 3em; /* make it nice and big */
+      font-size: 3em;
       font-weight: bold;
     }
+
     .subtitle {
       font-size: 1.5em;
       margin-top: 10px; /* spacing under title */
@@ -38,6 +40,3 @@
   <div class="subtitle">A mod that adds nearby stars to KSP</div>
 </body>
 </html>
-
-
-
