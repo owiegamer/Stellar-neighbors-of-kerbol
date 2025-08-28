@@ -16,18 +16,20 @@
       background-repeat: no-repeat; /* prevent tiling */
       color: white; /* makes text visible on dark images */
       font-family: Arial, sans-serif;
+
+      display: flex;              /* enable flexbox */
+      justify-content: center;    /* center horizontally */
+      align-items: center;        /* center vertically */
+      text-align: center;         /* center multiline text */
     }
 
-    SNKtext {
-      text-align: center;
-      padding-top: 20%;
+    .snktext {
+      font-size: 3em; /* make it nice and big */
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
-  <SNKtext>Stellar neighbors of kerbol</SNKtext>
-  
+  <div class="snktext">Stellar neighbors of kerbol</div>
 </body>
 </html>
-
-
