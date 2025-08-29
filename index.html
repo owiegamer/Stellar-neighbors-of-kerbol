@@ -33,20 +33,23 @@
       padding: 50px;
     }
 
-    .Planet-button {
-      /* blue background */
-      color: rgb(255, 0, 0); /* white text */
-      border: outline; /* no border */
-      padding: 40px 80px; /* size of the button */
-      font-size: 20px; /* text size */
-      border-radius: 15px; /* rounded corners */
-      cursor: pointer; /* pointer on hover */
-      transition: background-color 0.3s ease;
-    }
+   
+   .Planet-button {
+  background-color: transparent; /* no fill, shows background */
+  color: rgb(255, 253, 253); /* red text */
+  border: 3px solid rgb(255, 255, 255); /* outline with color */
+  padding: 20px 50px; /* size of the button */
+  font-size: 20px; /* text size */
+  border-radius: 15px; /* rounded corners */
+  cursor: pointer; /* pointer on hover */
+  transition: all 0.3s ease; /* smooth hover effect */
+}
 
-    .Planet-button:hover {
-      background-color: #0d6efd; /* darker blue on hover */
-    }
+.Planet-button:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* faint red background on hover */
+  color: white; /* text turns white on hover */
+  border-color: white; /* outline turns white on hover */
+}
   </style>
 </head>
 <body>
@@ -76,4 +79,5 @@
   </section>
 </body>
 </html>
+
 
