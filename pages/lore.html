@@ -45,7 +45,7 @@
     }
   </style>
 </head>
-<body>
+<body onload="warnSpoilers()">
   <h1>Lore</h1>
   <p>Here’s a list of all the new planets added by the mod.</p>
   <button class="back-button" onclick="location.href='../index.html'">Back</button>
@@ -69,7 +69,14 @@
   </section>
   </section>
 
- 
+  <script>
+    function warnSpoilers() {
+      const confirmed = confirm('Warning: This page contains spoilers for the mod. Are you sure you want to continue?');
+      if (!confirmed) {
+        window.location.href = '../index.html';
+      }
+    }
+  </script>
 </body>
 </html>
 
