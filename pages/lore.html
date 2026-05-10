@@ -43,9 +43,74 @@
       height: 100vh;        /* each section fills screen height */
       padding: 50px;
     }
+
+    .spoiler-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.75);
+      color: white;
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .spoiler-overlay.visible {
+      display: flex;
+    }
+
+    .spoiler-modal {
+      background: rgba(20, 20, 20, 0.96);
+      border: 2px solid #ffffff;
+      border-radius: 12px;
+      max-width: 420px;
+      width: 100%;
+      padding: 24px;
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .spoiler-modal p {
+      margin: 0 0 24px;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .spoiler-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .spoiler-buttons button {
+      border: 2px solid #ffffff;
+      border-radius: 8px;
+      background: transparent;
+      color: white;
+      padding: 12px 20px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .spoiler-buttons button:hover {
+      background: #ffffff;
+      color: #000000;
+    }
   </style>
 </head>
 <body onload="warnSpoilers()">
+  <div id="spoiler-overlay" class="spoiler-overlay">
+    <div class="spoiler-modal">
+      <p>Warning: This page contains spoilers for the mod. Press OK to continue and remove the gray overlay, or Cancel to return to the home page.</p>
+      <div class="spoiler-buttons">
+        <button onclick="acceptSpoilers()">OK</button>
+        <button onclick="cancelSpoilers()">Cancel</button>
+      </div>
+    </div>
+  </div>
   <h1>Lore</h1>
   <p>Here’s a list of all the new planets added by the mod.</p>
   <button class="back-button" onclick="location.href='../index.html'">Back</button>
@@ -71,10 +136,15 @@
 
   <script>
     function warnSpoilers() {
-      const confirmed = confirm('Warning: This page contains spoilers for the mod. Are you sure you want to continue?');
-      if (!confirmed) {
-        window.location.href = '../index.html';
-      }
+      document.getElementById('spoiler-overlay').classList.add('visible');
+    }
+
+    function acceptSpoilers() {
+      document.getElementById('spoiler-overlay').classList.remove('visible');
+    }
+
+    function cancelSpoilers() {
+      window.location.href = '../index.html';
     }
   </script>
 </body>
